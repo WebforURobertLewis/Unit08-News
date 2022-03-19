@@ -1,0 +1,194 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; font-family: 'Inter', sans-serif; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+//Navigation
+body{
+    background-color: lighten($secondaryColor, 18%);
+}
+
+nav{
+    ul{
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul li.active a{background-color: darken($primaryColor,2%);}
+    ul li a{
+        display: block;
+        padding: .75rem 2vw;
+        font-size: 1.1rem;
+        color: white;
+        text-decoration: none;
+        border-top: 1px solid rgb(1, 1, 37);
+    }
+    ul li a:hover{
+        background-color: lighten($primaryColor, .5%);
+    }
+    ul.open {display: block;
+    transition: all 3s;}
+}
+//Button
+#navWrapper {
+    background-color: $menuColor;
+}
+nav button{
+    height: 44px;
+    width: 44px;
+    background: none;
+    border: none;
+    position: relative;
+    .line{
+        position: absolute;
+        height: 2px;
+        width: 60%;
+        background-color: white;
+        left:  20%;
+        transition: all .4s ease;
+    }
+    .top{top: 29%;}
+    .middle {top: 48%;}
+    .bottom {top: 67%;}
+}
+#hamburgerBtn.open{
+    .top{
+        transform: rotate(49deg);
+        top: 48%;
+    }
+    .middle, .bottom{
+        transform: rotate(-45deg);
+        top: 48%;
+    }
+}
+
+/* BODY  */
+
+body {
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+#mainWrapper{
+    color: white;
+}
+//Grid Start
+div.storyGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.teaser, .lead{
+    padding: .5rem 2vw;
+    background-color: darken($primaryColor, 8%);
+}
+.lead{ grid-column: 1/ span 2;}
+//image width
+.teaser img, .lead img{
+width: 100%;
+}
+
+//Span
+span{
+    display: block;
+    text-align: center;
+    font-size: .75rem;
+}
+//span end
+
+
+/* HEADER  */
+header {
+    display: grid;
+    grid-template-columns: 51px auto;
+    align-items: center;
+	padding: .5rem 2vw;
+	h1 {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        padding-left: .5rem;
+        color: $primaryColor;
+    }
+} // end header
+
+/* NAVIGATION STUFF GOES HERE  */
+
+
+
+/* MAIN  */
+main {
+ 	p {padding: .5rem 2vw; color: #333; line-height: 125%;}
+	h1 {
+        padding: 1rem 2vw .5rem 2vw; 
+        font-size: 1.5rem; 
+        color: $secondaryColor;
+        font-weight: $lightWeight
+    }
+
+} // end main
+
+
+
+/* FOOTER  */
+#footerWrapper {background-color: #1b1b1b; }
+footer, a {
+    font-size: 12px;
+	color: #bbb;
+	text-align: center;
+    display: block;
+	text-decoration: none;
+    
+
+}
+div.footerSections{
+    padding-top: 14px;
+}
+div.footerSections, a{
+    display: grid;
+    grid-template-rows: auto;
+    text-align: left;
+    
+}
+//bold each section in footer
+span.footerHeading{
+    font-weight:bold;
+}
+div.footerGrid span{
+    text-align: left;
+    padding-left: 6vw;
+
+
+}
+div.footerGrid, a{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: lighten($primaryColor, 10%);
+
+}
+.footerSections{
+
+    justify-content: left;
+
+}
+p.footerHeading{
+    font-weight:bold;
+    align-self: left;
+    
+}
+a.footersub{
+    margin: .25rem;
+}
+
+p:not(footer p){
+    background-color: lighten($primaryColor, 20%);
+    grid-template-columns: 1;
+    margin-bottom: 0;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 0;
+    contain: content;
+    
+}

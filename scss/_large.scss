@@ -1,0 +1,33 @@
+header, nav, main {
+    max-width: 1240px;
+    margin: auto;
+}
+
+
+//dividers
+div.storyGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    .lead:nth-child(1){
+        grid-column: 1/ span 3;
+        grid-row: 1/span 2;
+        background-color: darken($primaryColor, 8%);
+        contain: content;
+    }
+}
+/* NAVIGATION STUFF GOES HERE  */
+
+//Footer Start here
+
+div.footerGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+//End Footer
+#mainWrapper{
+    background-color: darken($secondaryColor, 10%);
+
+}
